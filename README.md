@@ -1,48 +1,94 @@
 # WX
 
-## Work eXecution
+## Agent Experience
 
-WX は、Research で得た知識・仮説を、実際の成果物へ変換する Work 層である。
+WX は、**Agent Experience（AXではなくMX/RX/AX/WX全体）を実際のWorkとして扱うための層**である。
+
+基本の経験型を、
+
+```text
+MX → RX → AX → WX → MX → …
+```
+
+とする。
+
+> **見つける → 深掘る → 任せる → 生み出す**
 
 ---
 
-# 1. Core Layers
+# 1. Agent Experience の4つの型
+
+### MX — Market X
+
+**発見する**
+
+市場・ユーザー・社会を観察し、何をする価値があるのかを見つける。
 
 ```text
-RX → WX → MX
+Observe
+ ↓
+Need / Reaction
+ ↓
+Theme
+ ↓
+Hypothesis
 ```
 
-### RX — Research eXploration
+**MX = 見つける**
 
-**調べる・理解する・仮説を作る**
+---
+
+### RX — Research X
+
+**深掘る**
+
+MXで見つけたテーマを調査し、理解・検証・構造化する。
 
 ```text
 Question
  ↓
 Research
  ↓
+Analysis
+ ↓
 Knowledge
  ↓
-Hypothesis
+Method / Hypothesis
 ```
 
-例：`hoshi-novel`
-
-- コンテスト概要
-- 年次・回次
-- 応募数
-- 入選作品
-- 入選者
-- 出典URL
-- 調査・分析
-
-**RX = 知る**
+**RX = 深掘る**
 
 ---
 
-### WX — Work eXecution
+### AX — Agent X
 
-**実際に作る・試す・検証する**
+**任せる**
+
+RXで得た方法をAgentに渡し、実行可能・反復可能な仕事へ変換する。
+
+```text
+Method
+ ↓
+Agent
+ ↓
+Tool / Context / Model
+ ↓
+Automation
+ ↓
+Repeatable Work
+```
+
+AXはAgentそのものではなく、**Agentに仕事を任せ、自動化する経験の層**である。
+
+**AX = 任せる**
+
+---
+
+### WX — Work X
+
+**生み出す**
+
+Agentを含む仕組みを使って、実際の成果物を作り、完成させ、外へ出す。
 
 ```text
 Plan
@@ -56,311 +102,126 @@ Revise
 Output
 ```
 
-例：`hoshi-novel-2026`
+成果物の例：
 
-- アイデア
-- 設定
-- 構成
-- 草稿
-- 推敲
-- 完成稿
+- 記事
+- コード
+- 資料
+- 作品
+- データ
+- サービス
 
-**WX = やる**
+**WX = 生み出す**
 
 ---
 
-### MX — Market eXperience
-
-**市場・ユーザー・社会との関係を観測し、学習する**
+# 2. 基本ループ
 
 ```text
-Observe
- ↓
-Segment
- ↓
-Hypothesize
- ↓
-Position
- ↓
-Communicate
- ↓
-Measure
- ↓
-Learn
- ↓
-Update
+        ┌──────────────────────┐
+        │                      ↓
+MX → RX → AX → WX ────────────┘
+│     │     │     │
+│     │     │     └─ 生み出す
+│     │     └─────── 任せる
+│     └───────────── 深掘る
+└─────────────────── 見つける
 ```
 
-MXでは、完成したOUTPUTを外部へ出し、フィードバックを作る。
+### 経験としての問い
+
+| Layer | 問い | 動詞 |
+|---|---|---|
+| MX | 何をやるべきか？ | 見つける |
+| RX | それをどう理解するか？ | 深掘る |
+| AX | どこまで任せられるか？ | 任せる |
+| WX | 何を生み出すか？ | 生み出す |
+
+WXの成果は再び市場へ出て、MXの観測対象になる。
 
 ```text
+WX
+ ↓
 OUTPUT
-  ↓
-Market
-  ↓
-Reaction
-  ↓
-Learning
-  ↓
-RX / WX
-```
-
-**MX = 届けて学ぶ**
-
----
-
-# 2. Engineering Layers
-
-RX / WX / MXを支える実装側を、
-
-```text
-DX → AX → AW
-```
-
-として定義する。
-
-### DX — Developer eXperience
-
-**人間がWorkを実行しやすくする環境**
-
-```text
-Human
  ↓
-DX
+Market / User / Society
  ↓
-Tools / API / CLI / UI
+Reaction / Feedback
  ↓
-Work
-```
-
-扱うもの：
-
-- Repository
-- CLI
-- API
-- UI
-- SDK
-- Documentation
-- Development workflow
-- GitHub
-- CI/CD
-
-**DX = 人間の実行環境**
-
----
-
-### AX — Agent eXecution
-
-**AgentがWorkを実行するためのRuntime**
-
-```text
-Goal
+MX
  ↓
-Agent
+RX
  ↓
 AX
- ├─ Tool
- ├─ Context
- ├─ Memory
- ├─ Model
- └─ Action
  ↓
-Result
+WX
 ```
-
-AXはAgentそのものではなく、**Agentが実際に行動できる実行基盤**として扱う。
-
-**AX = Agentの実行環境**
 
 ---
 
-### AW — Agent Workflows
+# 3. Agent Experience と Engineering
 
-**Agentに何を・どの順番で・どの条件で実行させるか**
-
-```text
-Trigger
- ↓
-Intent
- ↓
-Plan
- ↓
-Agent
- ↓
-Tools
- ↓
-Check
- ↓
-Output
-```
-
-AWはWorkflow / Orchestration層。
-
-```text
-AW
-│
-├─ Research workflow
-├─ Issue workflow
-├─ Coding workflow
-├─ Review workflow
-├─ Release workflow
-└─ Publishing workflow
-```
-
-**AW = Agentの仕事の設計**
-
----
-
-# 3. 全体構造
+MX / RX / AX / WXを実際に回すためのEngineering側を、DX / AX / AWとして支える。
 
 ```text
                  HUMAN / SOCIETY
                        │
                        ▼
                       MX
-               Market eXperience
+                 Market X
                        │
-                       │ feedback
                        ▼
                       RX
-              Research eXploration
+                Research X
                        │
-                       │ knowledge
+                       ▼
+                      AX
+                 Agent X
+                       │
                        ▼
                       WX
-               Work eXecution
+                  Work X
                        │
-                       │ output
                        ▼
-                     OUTPUT
+                    OUTPUT
+                       │
+                       └────→ MX
 ```
 
-これをEngineeringで支える。
+Engineering：
 
 ```text
-                ┌───────────┐
-                │    DX     │
-                │ Human Dev │
-                └─────┬─────┘
-                      │
-RX ───────────────── WX ───────────────── MX
-                      │
-                ┌─────▼─────┐
-                │    AX     │
-                │Agent Exec │
-                └─────┬─────┘
-                      │
-                ┌─────▼─────┐
-                │    AW     │
-                │ Agent Work│
-                └───────────┘
+DX = Human-facing development environment
+AX = Agent execution / delegation environment
+AW = Agent workflow definition
 ```
 
-# 4. それぞれの問い
+※ここでは **AX** を「Agent Experienceの略」ではなく、**Agent X / 任せる層**として扱う。Agent Experience全体は **MX → RX → AX → WX** である。
 
-| Layer | 問い | 動詞 |
-|---|---|---|
-| RX | 何が分かるか？ | Research |
-| WX | 何を実行するか？ | Work |
-| MX | どう届き、どう反応するか？ | Market |
-| DX | 人間はどう実行するか？ | Develop |
-| AX | Agentはどう実行するか？ | Execute |
-| AW | Agentに何をさせるか？ | Workflow |
+---
 
-# 5. WX Decision Gate
+# 4. 最小定義
 
-RXからWXへ移す判断：
-
-```text
-□ 目的が明確か
-□ 成果物を定義できるか
-□ 小さく始められるか
-□ 結果を検証できるか
-□ 不確実性は許容範囲か
-□ 実行コストに見合う学習価値があるか
-□ OUTPUTにつながるか
-```
-
-WXからMXへ移す判断：
-
-```text
-□ 誰かに届ける必要があるか
-□ 利用者・観客・顧客が存在するか
-□ 外部反応を観測できるか
-□ フィードバックを次のWorkに利用できるか
-```
-
-# 6. Repositoryとの対応
-
-```text
-RX
-├─ research repositories
-│
-├─ hoshi-novel
-│    └─ コンテスト研究
-│
-└─ research-worldmodel
-     └─ 世界モデル研究
-
-
-WX
-├─ production repositories
-│
-├─ hoshi-novel-2026
-│    └─ 小説制作
-│
-└─ other-work repositories
-     └─ 実制作
-
-
-MX
-├─ publishing
-├─ audience
-├─ market
-├─ metrics
-└─ feedback
-```
-
-一方、
-
-```text
-DX
-└─ Human-facing development tools
-
-AX
-└─ Agent runtime
-
-AW
-└─ Agent workflow definitions
-```
-
-という関係になる。
-
-# 7. 最小定義
-
-> **RX = 知る**
+> **MX = 見つける**
 >
-> **WX = やる**
+> **RX = 深掘る**
 >
-> **MX = 届けて学ぶ**
+> **AX = 任せる**
 >
-> **DX = 人間がやりやすくする**
->
-> **AX = Agentが実行できるようにする**
->
-> **AW = Agentに仕事をさせる流れを定義する**
-
-この6層によって、
+> **WX = 生み出す**
 
 ```text
-Research
-   ↓
-Work
-   ↓
-Market
-   ↓
-Learning
-   ↺
+見つける
+  ↓
+深掘る
+  ↓
+任せる
+  ↓
+生み出す
+  ↓
+届ける
+  ↓
+また見つける
 ```
 
-を、人間とAgentの両方から実行可能な構造として扱う。
+これは、AIに「書かせる」だけではなく、**何を見つけ、何を研究し、何をAgentに任せ、何を成果として生み出すか**までを含めたAgent Experienceの基本型である。
