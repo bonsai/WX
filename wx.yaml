@@ -1,0 +1,31 @@
+name: WX
+meaning: Writing X
+subject: text
+handles: text
+produces:
+  - draft
+  - manuscript
+  - published_text
+actor: writer
+
+cycle:
+  - plan
+  - draft
+  - write
+  - complete
+  - publish
+
+outputs:
+  - outline
+  - draft
+  - manuscript
+  - published_text
+
+relations:
+  mx: find_theme
+  rx: research
+  sx: experiment
+  ax: delegate_to_agent
+  wx: write
+  ex: edit_and_prune
+  tx: type_system

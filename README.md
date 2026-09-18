@@ -1,227 +1,81 @@
-# WX
+# WX — Writing X
 
-## Agent Experience
+**WX = 文章を書く層。** 見つけ、調べ、確かめ、任せたものを、読まれる文章として生み出す。
 
-WX は、**Agent Experience（AXではなくMX/RX/AX/WX全体）を実際のWorkとして扱うための層**である。
+> **WX = Writing X（ライティング）**
+> 書く。完成させる。外へ出す。
 
-基本の経験型を、
+## Meaning
 
-```text
-MX → RX → AX → WX → MX → …
-```
+WX は「生み出す」一般ではなく、**文章（テキスト）を書く**ことに集中する層である。
 
-とする。
+> **WX handles Text.**
+> 扱う型は **文章（Text）**。書かれていないものを、読まれる文章へ変える。
 
-> **見つける → 深掘る → 任せる → 生み出す**
-
----
-
-# 1. Agent Experience の4つの型
-
-### MX — Market X
-
-**発見する**
-
-市場・ユーザー・社会を観察し、何をする価値があるのかを見つける。
-
-```text
-Observe
- ↓
-Need / Reaction
- ↓
-Theme
- ↓
-Hypothesis
-```
-
-**MX = 見つける**
-
----
-
-### RX — Research X
-
-**深掘る**
-
-MXで見つけたテーマを調査し、理解・検証・構造化する。
-
-```text
-Question
- ↓
-Research
- ↓
-Analysis
- ↓
-Knowledge
- ↓
-Method / Hypothesis
-```
-
-**RX = 深掘る**
-
----
-
-### AX — Agent X
-
-**任せる**
-
-RXで得た方法をAgentに渡し、実行可能・反復可能な仕事へ変換する。
-
-```text
-Method
- ↓
-Agent
- ↓
-Tool / Context / Model
- ↓
-Automation
- ↓
-Repeatable Work
-```
-
-AXはAgentそのものではなく、**Agentに仕事を任せ、自動化する経験の層**である。
-
-**AX = 任せる**
-
----
-
-### WX — Work X
-
-**生み出す**
-
-Agentを含む仕組みを使って、実際の成果物を作り、完成させ、外へ出す。
-
-```text
-Plan
- ↓
-Do
- ↓
-Check
- ↓
-Revise
- ↓
-Output
-```
-
-成果物の例：
-
-- 記事
-- コード
-- 資料
-- 作品
-- データ
-- サービス
-
-**WX = 生み出す**
-
----
-
-# 2. 基本ループ
-
-```text
-        ┌──────────────────────┐
-        │                      ↓
-MX → RX → AX → WX ────────────┘
-│     │     │     │
-│     │     │     └─ 生み出す
-│     │     └─────── 任せる
-│     └───────────── 深掘る
-└─────────────────── 見つける
-```
-
-### 経験としての問い
-
-| Layer | 問い | 動詞 |
+| 層 | 扱う型 | 変換 |
 |---|---|---|
-| MX | 何をやるべきか？ | 見つける |
-| RX | それをどう理解するか？ | 深掘る |
-| AX | どこまで任せられるか？ | 任せる |
-| WX | 何を生み出すか？ | 生み出す |
+| MX | 市場（Market） | → テーマ |
+| RX | 資料（Source） | → 要約・知見 |
+| SX | 仮説（Hypothesis） | → 法則・反証 |
+| AX | ワーク（Work） | → 実行 |
+| **WX** | **文章（Text）** | **→ 読まれる文章** |
+| EX | 原稿（Draft） | → 編集物 |
 
-WXの成果は再び市場へ出て、MXの観測対象になる。
+## Position
 
-```text
-WX
- ↓
-OUTPUT
- ↓
-Market / User / Society
- ↓
-Reaction / Feedback
- ↓
-MX
- ↓
-RX
- ↓
-AX
- ↓
-WX
+```
+MX（見つける）→ RX（研究する）→ SX（実験する）→ AX（任せる）
+      → WX（書く）→ EX（整える）→ 届ける
 ```
 
----
+**WX が書き、EX が削る。** 書くことと整えることは別の層である。
 
-# 3. Agent Experience と Engineering
+## Cycle
 
-MX / RX / AX / WXを実際に回すためのEngineering側を、DX / AX / AWとして支える。
-
-```text
-                 HUMAN / SOCIETY
-                       │
-                       ▼
-                      MX
-                 Market X
-                       │
-                       ▼
-                      RX
-                Research X
-                       │
-                       ▼
-                      AX
-                 Agent X
-                       │
-                       ▼
-                      WX
-                  Work X
-                       │
-                       ▼
-                    OUTPUT
-                       │
-                       └────→ MX
+```
+plan → draft → write → complete → publish
 ```
 
-Engineering：
+| Step | 問い | 動詞 |
+|---|---|---|
+| plan | 何を書くか？ | 構える |
+| draft | どう並べるか？ | 下書きする |
+| write | どう書くか？ | 書く |
+| complete | 書き切ったか？ | 完成させる |
+| publish | どう出すか？ | 出す |
+
+## DX / MX / WX / EX
+
+| Layer | 対象 | 主体 |
+|---|---|---|
+| DX | 現場・業務・顧客・データ | DXer |
+| MX | 市場・需要・顧客接点 | Marketer |
+| WX | 文章・原稿・記事・本 | Writer |
+| EX | 原稿の編集・刈り取り | Editor |
+
+## Principle
+
+1. Write for the reader.（読者のために書く）
+2. One idea per sentence.（一文一義）
+3. Finish, then edit.（まず書き切る。削るのはEX）
+4. Do not fabricate.（捏造しない）
+5. Agent is not the person.（演じるが本人ではない）
+
+## Structure
 
 ```text
-DX = Human-facing development environment
-AX = Agent execution / delegation environment
-AW = Agent workflow definition
+WX/
+├── README.md
+├── wx.yaml
+├── ontology/
+│   └── writer.yaml
+├── agents/
+│   └── writer.md
+└── skills/
+    └── wx/
+        └── SKILL.md
 ```
 
-※ここでは **AX** を「Agent Experienceの略」ではなく、**Agent X / 任せる層**として扱う。Agent Experience全体は **MX → RX → AX → WX** である。
+## Core statement
 
----
-
-# 4. 最小定義
-
-> **MX = 見つける**
->
-> **RX = 深掘る**
->
-> **AX = 任せる**
->
-> **WX = 生み出す**
-
-```text
-見つける
-  ↓
-深掘る
-  ↓
-任せる
-  ↓
-生み出す
-  ↓
-届ける
-  ↓
-また見つける
-```
-
-これは、AIに「書かせる」だけではなく、**何を見つけ、何を研究し、何をAgentに任せ、何を成果として生み出すか**までを含めたAgent Experienceの基本型である。
+> **BONSAI WX registers the act of writing: plan, draft, write, complete, and publish a text — so that what was found, researched, tested, and delegated becomes something a reader can read.**
